@@ -9,7 +9,17 @@ public class RedisCache:ICache{
     public RedisCache(IDatabase redisclient){
         _redisclient=redisclient;
     }
-    
+    public string get(string key){
+        _redisclient.StringGet(key);
+    }
+
+    public void set(string key, string value){
+        _redisclient.StringSet(key, value);
+    }
+    public void remove(string key) {
+        _redisclient.KeyDelete(key);
+    }
+
 }
 public class InMemoryCache: ICache{
     private readonly Dictionary<string,string> _cache= new Dictionary<string, string>();

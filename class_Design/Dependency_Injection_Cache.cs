@@ -52,3 +52,17 @@ public class CacheManager{
         _cache.remove(key);
     }
 }
+
+
+public class program{
+
+    public static void Main(string[] args){
+        var inMemCach =new InMemoryCache()
+        var cacheManager= new CacheManager(inMemCach);
+        var redisCache= new RedisCache();
+
+        cacheManager= new CacheManager(redisCache);
+        
+
+    }
+}
